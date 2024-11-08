@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    {% set mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for msg in mensagens %}
+            <div class="message">
+                {{ msg }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    <form action="/revista/save" method="post">
+        <div>
+            <label for="editora">Editora: </label>
+            <select name="id_editora" id="editora" required>
+                <option value=""></option>
+                {% for r in revista %}
+                <option value="{{r.id}}">{{r.editora}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="titulo">Titulo: </label>
+            <input type="text" name="titulo" id="titulo" required>
+        </div>
+        <div>
+            <label for="edicao">Edição: </label>
+            <input type="number" name="edicao" id="edicao" required>
+        </div>
+        <button type="submit">Salvar</button>
+    </form>
+{% endblock %}

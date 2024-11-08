@@ -10,19 +10,19 @@
         {% endfor %}
     {% endif %}
     <div>
-        <a href="/pedidos/add">Adicionar</a>
+        <a href="/revista/add">Adicionar</a>
     </div>
     <table>
         <tr>
-            <th>Data</th>
-            <th>Usuário</th>
-            <th>Pizza</th>
+            <th>Editora</th>
+            <th>Título</th>
+            <th>Edição</th>
         </tr>
-        {% for u in dados %}
+        {% for r in revista %}
         <tr>
-            <td>{{u.data}}</td>
-            <td>{{u.usuario}}</td>
-            <td>{{u.pizza}}</td>
+            <td>{{r.editora.nome}}</td>
+            <td>{{r.titulo}}</td>
+            <td>{{r.edicao}}</td>
         </tr>
         {% endfor %}
     </table>

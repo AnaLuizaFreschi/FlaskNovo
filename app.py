@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "Qualquercoisa"
-conexao = "mysql+pymysql://alunos:cefetmg@127.0.0.1/bin3g1"
+conexao = "mysql+pymysql://alunos:cefetmg@127.0.0.1/trabalhoAna"
 app.config['SQLALCHEMY_DATABASE_URI'] = conexao
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 from database import db

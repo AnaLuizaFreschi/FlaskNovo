@@ -5,9 +5,10 @@ class Editoras(db.Model):
     nome = db.Column(db.String(100))
     cidade = db.Column(db.String(100))
 
-    def __init__ (self, nome, email, senha):
+    def __init__ (self, nome, cidade):
         self.nome = nome
         self.cidade = cidade
+
 
     def __repr__ (self):
         return "<Editora {}>".format(self.nome)

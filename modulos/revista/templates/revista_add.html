@@ -14,8 +14,8 @@
             <label for="editora">Editora: </label>
             <select name="id_editora" id="editora" required>
                 <option value=""></option>
-                {% for r in revista %}
-                <option value="{{r.id}}">{{r.editora}}</option>
+                {% for r in editoras %}
+                <option value="{{r.id_editora}}">{{r.nome}}</option>
                 {% endfor %}
             </select>
         </div>

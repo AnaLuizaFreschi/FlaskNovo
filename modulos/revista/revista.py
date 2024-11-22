@@ -19,11 +19,10 @@ def add():
 @bp_revista.route('/save', methods=['POST'])
 def save():
     id_editora = request.form.get('id_editora')
-    id_revista = request.form.get('id_revista')
     titulo = request.form.get('titulo')
     edicao = request.form.get('edicao')
-    if id_editora and id_revista and titulo and edicao:
-        objeto = Revistas(id_editora, id_revista, titulo, edicao)
+    if id_editora and titulo and edicao:
+        objeto = Revistas(id_editora, titulo, edicao)
         db.session.add(objeto)
         db.session.commit()
         flash('Revista salva com sucesso!')
